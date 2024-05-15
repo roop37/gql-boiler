@@ -4,6 +4,8 @@
 //This is not a express gql code
 
 const { ApolloServer } = require("apollo-server");
+const { typeDefs } = require("./Schema/typedefs");
+const { resolvers } = require("./Schema/resolvers");
 
 // ApolloServer Server class will take in 2 information - typeDefinations and  some bunch of resolvers
 //TypeDefs - Every Piece of data ,Every type we define,Every query we define in GQL will be inside of the Typedefs

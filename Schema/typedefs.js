@@ -6,7 +6,10 @@ const { gql } = require("apollo-server");
 
 const typeDefs = gql`
   # So Inorder for us to have data about Users we have to create a type called user
+
+  #GQL by Default has a basic type called id similar to String,Int other basic types
   type User {
+    id: ID!
     name: String!
     username: String!
     age: Int!
@@ -20,7 +23,12 @@ const typeDefs = gql`
   type Query {
     # Suppose in one of our req we wanna grab list of users so we will define a query as users that returns array of users
     # Once you define the type user we can start creating queries that deal with type user
+
     users: [User]!
     # friends:
+
+    # We have to create a resolver that is going to resolve the user field
   }
 `;
+
+module.exports = { typeDefs };
